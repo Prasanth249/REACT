@@ -3,7 +3,7 @@ Understanding the Virtual DOM
 ======================
  => when  we run in react application it is not rendering directly in  the browsers DOM.
 react knows ntg about the browser or real dom.
-react knows how to work with components but  its doesnt care whether those components contains html 
+react knows how to work with components but its doesnt care whether those components contains html 
 elements or custom elements that doesnt matter to react.
 
 

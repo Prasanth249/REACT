@@ -176,7 +176,7 @@ function ProductList(props){
     //console.log(props.newProduct)
     
 
-let[newProductList,updateProductList]=useState(products);
+let[newProductList, updateProductList]=useState(products);
 updateProductList([props.newProduct, ...products]);
 
     return (<div className="row">
@@ -185,6 +185,7 @@ updateProductList([props.newProduct, ...products]);
         {
             newProductList.map((product)=>{
                 return <Products 
+			
                     id={product.pID}
                     name={product.pName}
                     description={product.desc}
@@ -203,7 +204,7 @@ bcse we can only create a new product when the page has loaded
 so intially when the page loads the newProduct object will be null and on that null we
 are trying to access the pID,pName,desc
 
-we can fix this by nullish coalescing operator
+we can fix this by optional chaining operator
 
 
  {
@@ -229,7 +230,7 @@ we have this kind of error when we try to render a component and when the state 
 immediately changes.
 
 Eg:In app.js we are trying to render the ProductList component so when this ProductList will be 
-rendered in the web page.the ProductList component function will be called  inside this ProductList component
+rendered in the web page. The ProductList component function will be called  inside this ProductList component
 function we are creating a state and then we are immediately trying to update that state
 now when we are trying to update the state by calling updateProductList function it is going to
 re-evaluate the ProductList component function that means it is going to recall th ProductList component function
@@ -421,7 +422,6 @@ o/p:now error is not showing
 so when we have added this key prop to the ProdutcList item it helps react to identify the individual
 list items 
 
-
 now if the user is  added the item if u notice that the first item has not flashed instead a new list item 
 has been created at the top which is the new product.
 by adding key props now react knows where to add the new item and it able to update the list in the
@@ -488,7 +488,7 @@ jst it added the drop down menu with the All,Available and Unavailable options.
 
 
 =>Whenever the user selects a value from the drop down a change event will happen 
-on the select  element.so here we can listen to the change event for that
+on the select  element. So here we can listen to the change event for that
 we can use onChange event listener.
 
 FilterProduct.js
@@ -538,7 +538,7 @@ o/p:In the app component we are receiving the filter value which the user as sel
 web page.using the filterValue we want to filter the newProductList 
 for that lets create a useState.
 lets create a variable called filteredProductList and we want to assign an array with the
-filtered products.for that on the newProductList on this array i am going to call a function
+filtered products. For that on the newProductList on this array i am going to call a function
 called filter so this filter function is also a transformation function.
 and this filter function also takes a callback function
 so this filter function is going to loop over the newProductList array and for each iteration it 
@@ -580,9 +580,8 @@ if i select available  now it should display only available products.
 Rendering conditional content
 ===============================
 
-
 Now lets say if i dont have any products inside the products array in that case we want to
-display a msg no products available.and we want to display the list of products when the
+display a msg no products available and we want to display the list of products when the
 products array has some products.
 
 for ex:if i comment the products array in App.js then no product is being displayed in the
@@ -621,7 +620,7 @@ o/p:If i dont have any products then it will display No products available.
 
 
 
-Alternative way :usin ternary operator 
+Alternative way :using ternary operator 
 ---------------------------------------
 
 
@@ -662,7 +661,7 @@ Rendering Form Conditionally
 =>here we want to have a button and when the user clicks on that button it should display
 this form and, in this form along with the Add Product button we also want to have a cancel
 button so when the user clicks on the Add Product button it should create a new product
-and then it should remove the form from the web page.and also when the cancel button is clicked
+and then it should remove the form from the web page and also when the cancel button is clicked
 we want to hide the form 
 
 =>In createProduct.js create button lets say Create product
@@ -670,7 +669,7 @@ we want to hide the form
   <button>Create Product</button>
 
 when the button is clicked the form should be shown and when the form is submitted or cancelled
-this button should be shown.
+this button should not be shown.
 
 =>o/p:Create product button and Add Product button both are shown but only one of these
 should be rendered in the web page.

@@ -11,6 +11,7 @@ user interfaces.it lets you compose complex UIs from small and isolated pieces o
 code called components.
 
 
+
 Why React?
 ----------
 =>First of all,React is feature rich javascript library,which comes with a lot of
@@ -32,7 +33,7 @@ loaded in the browser.
 
 
 Eg:From the browser we are making a request to the server for sending us the html content of the 
-about page.and server has sent the about.html to the browser.this about.html will be rendered in
+about page and server has sent the about.html to the browser. this about.html will be rendered in
 the browser and the content of the about page will be displayed to the user.in the same way if we 
 want to render the contact page in the browser we will send another rqst to the server the 
 server will send us back the contact.html and that will be rendered in the browser
@@ -125,7 +126,7 @@ here is that this object this react element which u see here in console  this is
 virtual DOM is a lightweight memory representation of ui its not the real browsers DOM its the virtual DOM.
 we want to render it in the real dom that means  we want to render it in the browser DOM.
 to do that
-in the React dom object we have a render method,and this render method renders an element from the 
+in the React dom object we have a render method, and this render method renders an element from the 
 virtual dom in the real dom so the first argument of this render method is the element which we want to
 render so here we want to render this header then we also need to specify where do we want to render this element.
 so we need to  pass it as the second argument to the render method now here we want to render this element 
@@ -281,7 +282,7 @@ div.append(App());
 o/p:This is App Component
 
 =>It is also possible to use regular javascript to design the UI.
-but if we notice when we are using the regular javascriptwe have three lines of code
+but if we notice when we are using the regular javascript we have three lines of code
 but earlier using jsx syntax we had only one line of code.
 so this code might get more complex when we add more and more elements in the ui using javascript.
 so jsx gives us the adv of creating ui elements with ease using html syntax.
@@ -596,7 +597,6 @@ Adding Bootstap in React App
 =>nom install bootstrap
 
 
-
 Products.js
 -----------
 //use Pascal case i.e every first letter of the every word should be Capital Eg:ProductsDetails
@@ -766,7 +766,7 @@ But there are some attributes which works and which behaves differently in jsx t
 o/p:The image is not display in web page
 bcse we cannot assign the local path like this to the source attribute.
 
-we need to call the require method for src attribuet.
+we need to call the require method for src attribute.
 
 <img src={require("../images/fresh-milk.png")}>
 
@@ -1611,7 +1611,7 @@ Understanding children props
 ============================ 
 
 =>The props object has a spatial property called children and that children property gets assigned 
-with the value which we  write within the opening and closing component
+with the value which we write within the opening and closing component
 
 
 ProductDetails.js
@@ -2038,7 +2038,7 @@ of the react object.
 
 =>createElement will take 3 parameters
 1.which u want to create
-2.anonymous object in this anonymous object u can specify the attributes for the element as the property
+2. In this anonymous object u can specify the attributes for the element as the property
 3.content which we have b/w opening and closing element(<div> <h6><Button><span> etc</div>
 
 return React.createElement('div',{className:'d-flex align-items-center justify-content-start mt-1'},

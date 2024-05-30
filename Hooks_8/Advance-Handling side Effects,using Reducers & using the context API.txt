@@ -8,8 +8,9 @@ Eg:Storing data in browser storage.
 This also should not re-render the ui.
 Eg:when we set timers or intervals in our code.
 
+
 These are some tasks which we also do when creating a react applicaion but these tasks are not related to rendering
-smtg in the ui atleast not directly of course when we send an http request to the server and when we get the response
+smtg in the ui atleast not directly, of course when we send an http request to the server and when we get the response
 we might want to render the response into the ui but sending the request itself and handling the potential errors
 that is not smtg related to rendering smtg in the ui.so these types of task must happen outside of the normal
 component evaluation so we know that whenever the state inside a component changes it re-evaluates that component
@@ -193,7 +194,7 @@ export default App;
 
 o/p:Enter the email and pswd and it display the home webpage  but
 
-we lose data when the react app starts or reload , it would be nice to store the previous data somewhere 
+we lose data when the react app starts or reload, it would be nice to store the previous data somewhere 
 where it persist that data and when we start the app again we  can check if the data was
 persisted and if the data is there we log the user automatically  so that user 
 doesnt re-enter the details and thats where we can use the useEffect hook ...
@@ -204,7 +205,6 @@ if its value is 1 in that case we automatically want to log in the user
 Now i want to store the data in the browser storage the most cases the storage would be either
 cookies or local storage.
 For our application lets use local storage
-
 
 
 =>use the localstorage object this object is a global object present in the browser.
@@ -400,7 +400,7 @@ Login.js
 
 useEffect(() => {
     //this below logic will get executed when the entered email value changes and
-	also everytime the entered password value changes.and also when the
+	also everytime the entered password value changes and also when the
 	setFormIsValid function changes for this useEffect we have three dependencies
 	setFormIsvalid,enteredEmail,enteredPassword.
 	Most of the time setFormIsvalid dependencies never going to change so we can
@@ -420,7 +420,7 @@ Every time we are entering smtg in the email text box or password text box.
 we are assigning that value to a variable 
 in this case we are assigning that value to the enteredEmail and enteredPassword.
 Here also the ui is not changing but we are doing smtg we are assigning the value 
-entered in the ui to a state.and thats why this is a side effect.
+entered in the ui to a state and thats why this is a side effect.
 
 
 useEffect cleanup function 
@@ -430,7 +430,7 @@ must be a function and this function can be used to do some cleanup work.
 so we call this function as cleanup function.
 
 =>useEffect will be executed for each keystroke which we make inside the email
-field or the password field.its not a problem but the logic which we write inside
+field or the password field. Its not a problem but the logic which we write inside
 the callback function sometimes that might cause a problem.thats bcse for every keystroke
 in the emailfield and password field.
 the entered email and the entered  password state will change
@@ -464,7 +464,7 @@ Here the setTimeout() returns an integer value and that value is unique for
 each timer so we can assign that value to a variable
  so lets create a variable called as identifier.
 
-Email:ab
+Email:
 when i type smtg on email field lets say a  a timer will be created now what i want is
 as soon as i type smtg lets say b I want to clear the previous timer and 
 i want to create a new timer for the value b again
@@ -472,7 +472,7 @@ i type smtg lets say c I want to clear the previous timer(b) and
 i want to create a new timer for the value c
 
 and therefore only the last timer will complete and as long as the user keeps on
-typing we always clear all the other timers.and therefore we only have one timer
+typing we always clear all the other timers and therefore we only have one timer
 that completes and that completed after 500 milliseconds.
 To implement this we can use cleanup function of useEffect.
 
@@ -724,6 +724,7 @@ remove the code which we write inside the reducer() bcse it is jst to understand
 the first argument will be the current state .the current state will be assigned with the current value of the state
 the first argument will be the action .the action will be assigned with the value which we pass an argument to the
 dispatcher function
+
 
 current we are not passing any argument to the dispatcher function
 in this case the action will be assigned with the value undefined.
@@ -1164,10 +1165,11 @@ we use react context to manage state globally.
 
 
 =>In order to make the isLoggedIn state available in the child components of the app component we are passing it 
-as a props.bcse the state will be available locally it will only be available inside the component inside which
-we have declared it but with the help of React context we can make state available globally.and in that case
+as a props. bcse the state will be available locally it will only be available inside the component inside which
+we have declared it but with the help of React context we can make state available globally and in that case
 we dont have to pass a state as a props to the child components in order to use that state in the child 
 component.
+
 
 =>Here we are creating the AuthContext
 AuthContext.js
@@ -1211,7 +1213,7 @@ MainHeader.js
 
 =>on this props object we dont have any property called isLoggedIn thats bcse here when we are calling
 the navigation component we have not specified any attribute called isLoggedIn.
-=>In App.js we have provide the AuthContext and in Navigation.js we want to consume that AuthContext.
+=>In App.js we have provide the AuthContext and in Navigation.js we want to consume that AuthContext. 
 
 so create useContext
 
@@ -1335,7 +1337,7 @@ export default Navigation;
 
 
 =>In intellisense it will not showing the onLogout property bcse we have create the 
-onLogout property in AuthContext.Provider but in the AuthContext there we have 
+onLogout property in AuthContext. Provider but in the AuthContext there we have 
 not specify that property.
 
 AuthContext.js
@@ -1540,11 +1542,11 @@ button it will always be used to logout a user we cannot use this button element
 anything else when the button is clicked.
 
 
-=> React Context is not optimized for high frequency changes.that means 
-if u state changes every second or  multiple times per second
+=> React Context is not optimized for high frequency changes that means 
+if a state changes every second or  multiple times per second
 
 what if i have a app-wide or component-wide state that changes more frequently where i would want to useContext for that
-in such cases we have other battle tools in react.This tool is called redux.
+in such cases we have other battle tools in react. This tool is called redux.
 
 => We can use other tools like Redux for managing app wide state for frequently changing states.
 

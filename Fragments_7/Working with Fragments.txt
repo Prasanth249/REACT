@@ -3,7 +3,7 @@ Fragments in React
 
 index.html
 ----------
-we have the div with the id root and inside this div only all other components will be rendered.
+We have the div with the id root and inside this div only all other components will be rendered.
 
 App.js
 ------import './App.css';
@@ -210,7 +210,7 @@ o/p:
 </div>
 
 =>using portal we can render a jsx or some html in a dom node other than the root node.
-=>the first argument of the createPortal method can be any value which can be rendered in the web page.it can 
+=>the first argument of the createPortal method can be any value which can be rendered in the web page. It can 
 be a number string jsx or any other component.
 
 why do we need the Portals

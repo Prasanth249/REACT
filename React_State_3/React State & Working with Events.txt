@@ -42,7 +42,7 @@ function btnClickEventHandler(){
     console.log("Button clicked")
 }
 function Button (props){
-    return  <button onClick={btnClickEventHandler} className="btn btn-primary">{props.children}</button>
+    return  <button onClick={} className="btn btn-primary">{props.children}</button>
 }
 
 export default Button;
@@ -95,7 +95,7 @@ lets provide a meaningful name in ProductDetail.js  lets call it may be eventHan
 so this eventHandler will be created as a property of the props object(Button.js)
 and that property will be assigned with a reference to the decrementProductCount function.
 
-Indirectly we are assigning the decrementProductCount function to the onClcik event handle attribute in Button.js
+Indirectly we are assigning the decrementProductCount function to the onClick event handle attribute in Button.js
 
 
 ProductDetails.js
@@ -437,14 +437,13 @@ the intial value which we are specifying , the intial value is only considered w
 executes for the first time for a given component instance
 
 
-
 =>In a nutshell useState is simple u register a state using the useState function
 from the useState function you always get two values
 a spatial variable whose value will be updated and
 spatial function which we call to update the value of that spatial variable.
 and we can call the spatial function whenever the state should change
 and then we use the spatial variable whenever we want to use the updated value for outputting it in the web page.
-and react will do the rest.it will re-execute the component function and re-evaluate the jsx code and
+and react will do the rest. it will re-execute the component function and re-evaluate the jsx code and
 return it with the updated state whenever a state changes.
 
 =>without state our user interface will never change it will always remain static.
@@ -890,7 +889,7 @@ ProductForm.js
 =>change in one state will not affect the other state.
 
 now we are storing the value entered by the user in the form into these variables so we know these variables are stored somewhere
-in the memory.and since these variables will be stored somewhere in the memory later in the
+in the memory and since these variables will be stored somewhere in the memory later in the
 program we can use these variables to create new product object and display it in the product list
 
 instead of creating multiple useState we can also have a single state which can update all the inputs whenever there is a change.
@@ -934,7 +933,7 @@ one way of doing this would be to use this spread operator which is js operator
     }
 
 =>Now we are using the spread operator on the userInput object it is going to expand the properties 
-of the userInput object into individual properties.and those individual properties are again wrapped
+of the userInput object into individual properties and those individual properties are again wrapped
 within these curly braces.so it will become of the this(within curly braces) object
 
 =>spread operator simply takes an object pulls out all the key value pair from that object and adds 
@@ -999,7 +998,7 @@ bcse to update the userInput object with new value we are depending on the previ
 lets say the user has entered a name for the product in the form so this( pName:event.target.value)
 expression will return us the name of the product from that form and we want to assign that value
 to the pName property( pName:'',) to do that we need to update the entire object and in that entire
-object we dont want to update the value of all these properties(pPrice,pDescription,pAvailabilty,pImageUrl) 
+object we dont want to update the value of all these properties(pPrice, pDescription, pAvailabilty, pImageUrl) 
 we only want to update the value of pName property and we want to retain the value of 
 these properties(pPrice,pDescription,pAvailabilty,pImageUrl) with its previous value
 thats why we are depending the previous state snapshot of the userInput when we are updating it.
@@ -1014,7 +1013,7 @@ this
 instead of doing this what u can do is?
 ---------------------------------------
 still call updateuserInput function and instead of passing an object directly to this updateuserInput function
-u can pass a callback function to it.and this callback function is going to receive an argument and that argument
+u can pass a callback function to it and this callback function is going to receive an argument and that argument
 will be the previous state value so we can call this argument may be prevState u can call it anyname 
 and this parameter is going to receive the previous state of the userInput and from this function u can return an object
 and inside this object u can use the spread operator on prevState object and u can update the property which u 
@@ -1032,7 +1031,7 @@ want to update here so here we want to update pName property.
 
 why can we use this approach only why dont we use before approach
 ------------------------------------------------------------------
-react schedules state update it does not perform them instantlyand therefore
+react schedules state update it does not perform them instantly and therefore
 theoretically if u schedule a lot of state update at the same time u could be
 depending on an outdated or incorrect state snapshot if u use this approach
 
@@ -1330,7 +1329,7 @@ let products = [
         desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit fuga autem maiores necessitatibus.',
         isAvailable: false,
         image: "images/olive-oil.png",
-        price: 14
+        price: 14   
     }
   ]
 function ProductList(){
